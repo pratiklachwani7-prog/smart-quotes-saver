@@ -46,35 +46,30 @@ const App = () => {
 
   return (
     <>
-      <div className='min-h-full min-w-full bg-[#faebd7] flex gap-8 flex-col' >
-            <div className='flex gap-19 justify-end mx-5 my-3'>
-                  <div className='flex gap-2'>
-                      <input type="radio" name="page" id="All"
-                      onChange={ (event) => 
-                              {
-                                  setCurrentView("all") ;
-                              }
-                            }
-                      checked = {currentView === "all"} 
-                      />
-                      <label htmlFor="All" className='user-select-none'>All Quotes</label>
-                  </div>
-                  <div className='flex gap-2'>
-                      <input type="radio" name="page" id="Save" 
-                      onChange={ (event) => 
-                            {
-                                setCurrentView("save") ;  
-                            }
-                       }  
-                       checked = {currentView === "save"}  
-                      />
-                      <label htmlFor='Save'>Saved Quotes</label>
-                  </div>
+      <div className='min-h-full min-w-full bg-gray-100 flex gap-8 flex-col' >
+            <div className='flex justify-end bg-gray-100 rounded-xl p-1'>
+              <button
+              onClick={ () => 
+                    {
+                      setCurrentView("all") ;
+                    }
+               }
+               className = {`border-2 border-double border-blue-300 px-3 py-2 my-7 ml-20 font-semibold text-sm ${currentView === "all" ? "bg-white shadow text-gray-900" : "text-gray-600 hover:text-gray-900" } ` }
+              >All Quotes</button>
+              <button
+              onClick={ () => 
+                    {
+                      setCurrentView("save") ;
+                    }
+               }
+              className = {`border-2 border-double border-blue-300 px-3 py-2 my-7 mr-20 font-semibold text-sm ${currentView === "save" ? "bg-white shadow text-gray-900" : "text-gray-600 hover:text-gray-900" } ` }
+              >Saved Quotes</button>
+            
             </div>
 
             <div className='flex gap-5 justify-center'>
               <Buttons data="Decreament Number of Quotes" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr}/>
-              <h3 className='flex items-center text-2xl font-semibold'>Number of Quotes :- {limits}</h3>
+              <h3 className='flex items-center text-xl font-semibold text-gray-700'>Number of Quotes :- {limits}</h3>
               <Buttons data="Increament Number of Quotes" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr}/>
             </div>
 

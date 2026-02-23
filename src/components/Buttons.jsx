@@ -22,9 +22,8 @@ const Buttons = (props) => {
                     }
             }  
      }
-    className='button bg-amber-300 px-2 py-2.5 border-2 border-black text-xl cursor-pointer
-    hover:bg-amber-200
-    active:scale-95
+    className='button bg-white border-3 border-gray-300 shadow-sm  px-5 py-3 text-xl cursor-pointer
+    active:scale-95 hover:bg-gray-50
     '>
         {data}
     </div>
