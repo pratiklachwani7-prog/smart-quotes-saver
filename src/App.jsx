@@ -4,11 +4,12 @@ import Cards from './components/Cards';
 import Buttons from './components/Buttons';
 
 const App = () => {
-  
+
     const [loading, setLoading] = useState(true) ;
     const [quotesArr, setquotesArr] = useState([]) ;
     const [index, setIndex] = useState(0) ;
     const [limits, setLimits] = useState(8) ;
+    const [currentView, setCurrentView] = useState("all") ;
     
     
     useEffect( () => 
@@ -48,11 +49,25 @@ const App = () => {
       <div className='min-h-full min-w-full bg-[#faebd7] flex gap-8 flex-col' >
             <div className='flex gap-19 justify-end mx-5 my-3'>
                   <div className='flex gap-2'>
-                      <input type="radio" name="page" id="All"/>
-                      <label htmlFor="All">All Quotes</label>
+                      <input type="radio" name="page" id="All"
+                      onChange={ (event) => 
+                              {
+                                  setCurrentView("all") ;
+                              }
+                            }
+                      checked = {currentView === "all"} 
+                      />
+                      <label htmlFor="All" className='user-select-none'>All Quotes</label>
                   </div>
                   <div className='flex gap-2'>
-                      <input type="radio" name="page" id="Save"/>
+                      <input type="radio" name="page" id="Save" 
+                      onChange={ (event) => 
+                            {
+                                setCurrentView("save") ;  
+                            }
+                       }  
+                       checked = {currentView === "save"}  
+                      />
                       <label htmlFor='Save'>Saved Quotes</label>
                   </div>
             </div>
