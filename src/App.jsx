@@ -4,26 +4,44 @@ import Cards from './components/Cards';
 import Buttons from './components/Buttons';
 
 const App = () => {
-    const [printQuotesData, setPrintQuotesData] = useState("") ;
+  
+    const [loading, setLoading] = useState(true) ;
     const [quotesArr, setquotesArr] = useState([]) ;
     const [index, setIndex] = useState(0) ;
     const [limits, setLimits] = useState(8) ;
     
     
     useEffect( () => 
-        {
-            const fetchQuotes = async () =>
-            {
-                const response = await axios.get(`https://dummyjson.com/quotes?limit=${limits}&skip=${10+index}`) ;
-                //console.log("The response :- " , response) ;
-                const dataQuotes = response.data.quotes ;
-                //console.log("The quotes :- " , dataQuotes) ;
-                setquotesArr(dataQuotes) ;
-              }  ;
-
-            fetchQuotes() ; 
+      {
+        const fetchQuotes = async () =>
+          {
+            setLoading(true) ;
+            const response = await axios.get(`https://dummyjson.com/quotes?limit=${limits}&skip=${10+index}`) ;
+            //console.log("The response :- " , response) ;
+            const dataQuotes = response.data.quotes ;
+            //console.log("The quotes :- " , dataQuotes) ;
+            setquotesArr(dataQuotes) ;
+            setLoading(false) ;
+          }  ;
+          
+          fetchQuotes() ; 
         }
-      , [limits , index , quotesArr] ) ;
+        , [limits , index ] ) ;
+        
+        let printQuotesData ;
+        if (loading)
+        {
+          printQuotesData = <h3 className='w-full text-5xl flex justify-center font-semibold'>Loading.....</h3>
+        }
+        else
+        {
+            printQuotesData =  (
+                quotesArr.map((elem , idx) =>
+                {
+                  return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author}/>
+                })
+              )
+        }
 
   return (
     <>
@@ -46,10 +64,7 @@ const App = () => {
             </div>
 
             <div className='flex flex-wrap'>
-              {quotesArr.map((elem , idx)=>
-                {
-                  return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author}/>
-                })}
+              {printQuotesData}
             </div>
 
 
