@@ -13,6 +13,7 @@ const App = () => {
     const [savedQuotesArr, setSavedQuotesArr] = useState([]) ;
     
     
+    
     useEffect( () => 
       {
         const fetchQuotes = async () =>
@@ -21,7 +22,7 @@ const App = () => {
             const response = await axios.get(`https://dummyjson.com/quotes?limit=${limits}&skip=${10+index}`) ;
             //console.log("The response :- " , response) ;
             const dataQuotes = response.data.quotes ;
-            console.log("The quotes :- " , dataQuotes) ;
+            // console.log("The quotes :- " , dataQuotes) ;
             setquotesArr(dataQuotes) ;
             setLoading(false) ;
           }  ;
