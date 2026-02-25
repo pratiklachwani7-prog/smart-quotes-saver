@@ -12,7 +12,8 @@ const Cards = (props) => {
       <div className='bg-indigo-500 text-white transition duration-200 rounded-lg py-2 cursor-pointer flex justify-center gap-2
       hover:bg-indigo-600 active:scale-95
       ' >
-        <span>Save</span>   
+        <span 
+        >Save</span>   
       </div>
     </div>
   )

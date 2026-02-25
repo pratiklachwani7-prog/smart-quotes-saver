@@ -6,6 +6,8 @@ const Buttons = (props) => {
     let changingFnc = props.variableFnc ;
     let data = props.data ;
     let setQuotesArray = props.quotesArrayChanger ;
+    let currentView = props.currentView ;
+  
   return (
     <div 
     onClick={ () => 
