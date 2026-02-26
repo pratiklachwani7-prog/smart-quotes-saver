@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 import axios from "axios"
 import Cards from './components/Cards';
 import Buttons from './components/Buttons';
+import { RiArrowDownLine, RiArrowLeftLine, RiArrowRightLine, RiArrowUpLine } from '@remixicon/react';
 
 const App = () => {
 
@@ -88,9 +89,9 @@ const App = () => {
 
             <div 
             className = {`flex gap-5 justify-center ${currentView === "save" ? "hidden" : "block"} ` }>
-              <Buttons data="Decreament Number of Quotes" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
+              <Buttons data={ <> <RiArrowDownLine /> Fewer  </> } label="Decreament" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
               <h3 className='flex items-center text-xl font-semibold text-gray-700'>Number of Quotes :- {limits}</h3>
-              <Buttons data="Increament Number of Quotes" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
+              <Buttons data={ <> <RiArrowUpLine /> More  </> } label="Increament" variable={limits} variableFnc = {setLimits} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
             </div>
 
             <div className='flex flex-wrap'>
@@ -100,9 +101,9 @@ const App = () => {
 
             <div 
             className = {`flex gap-5 justify-center ${currentView === "save" ? "hidden" : "block"} ` }>
-              <Buttons data="Prev" variable={index} variableFnc = {setIndex} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
+              <Buttons data={ <> <RiArrowLeftLine /> Prev </>  } label="Prev" variable={index} variableFnc = {setIndex} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
               <h3 className='flex items-center text-2xl font-semibold'>Page :- {index+1}</h3>
-              <Buttons data="Next" variable={index} variableFnc = {setIndex} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
+              <Buttons data={ <> <RiArrowRightLine /> Next </>  } label="Next" variable={index} variableFnc = {setIndex} quotesArrayChanger = {setquotesArr} currentView = {currentView}/>
             </div>
       </div>
 
