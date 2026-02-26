@@ -14,7 +14,6 @@ const App = () => {
     const [savedQuotesArr, setSavedQuotesArr] = useState([]) ;
     
     
-    
     useEffect( () => 
       {
         const fetchQuotes = async () =>
@@ -43,7 +42,7 @@ const App = () => {
             (
                 quotesArr.map( (elem , idx) =>
                 {
-                  return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author} />
+                  return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author} savedQuotes = {savedQuotesArr} setSavedQuotesArr = {setSavedQuotesArr} />
                 }  )
               )
                 :
