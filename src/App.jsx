@@ -42,7 +42,7 @@ const App = () => {
             (
                 quotesArr.map( (elem , idx) =>
                 {
-                  return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author} savedQuotes = {savedQuotesArr} setSavedQuotesArr = {setSavedQuotesArr} />
+                  return <Cards key={elem.id} id={elem.id} quote={elem.quote} author={elem.author} savedQuotes = {savedQuotesArr} setSavedQuotesArr = {setSavedQuotesArr} />
                 }  )
               )
                 :
@@ -51,7 +51,7 @@ const App = () => {
               (
                     savedQuotesArr.map( (elem , idx) => 
                   {
-                    return <Cards key={idx} id={idx} quote={elem.quote} author={elem.author}/>
+                    return <Cards key={elem.id} id={elem.id} quote={elem.quote} author={elem.author} savedQuotes = {savedQuotesArr} setSavedQuotesArr = {setSavedQuotesArr} />
                   } )
                )
                :
