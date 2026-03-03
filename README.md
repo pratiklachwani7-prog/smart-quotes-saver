@@ -1,99 +1,95 @@
-# 📜 Smart Quotes Saver
+# ✨ Smart Quote Saver
 
-A React-based quote management application built with API integration and evolving state architecture.
+A modern React application that fetches inspirational quotes from an external API and allows users to save their favorite quotes locally.
 
-This project demonstrates real-world React concepts including data fetching, pagination logic, component composition, and scalable state management.
-
----
-
-## 🚀 Current Features
-
-- Fetch quotes from external API
-- Adjustable number of quotes per page
-- Pagination controls (Prev / Next)
-- Component-based architecture
-- Reusable Button component
-- Responsive flex layout
-- Clean UI structure
+This project demonstrates practical React concepts including state management, conditional rendering, side effects, localStorage persistence, and UI state synchronization.
 
 ---
 
-## 🧠 Concepts Implemented
+## 🚀 Features
 
-- useState
-- useEffect
-- API integration with Axios
-- Dynamic query parameters
-- Controlled pagination
-- Prop drilling
-- Component reusability
+- 🔄 Fetch quotes dynamically from API
+- 📄 Pagination support (Next / Prev)
+- 📊 Adjustable number of quotes per page
+- 💾 Save / Unsave quotes
+- 🧠 Saved quotes persisted using localStorage
+- 🔁 Toggle between "All Quotes" and "Saved Quotes"
+- ⏳ Loading state handling
+- 🎨 Clean modern UI with responsive layout
+
+---
+
+## 🛠 Tech Stack
+
+- React (Hooks)
+- Axios
+- Tailwind CSS
+- React Icons (Remix Icons)
+- localStorage (Browser API)
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Home – All Quotes
+
+![All Quotes](./screenshot/Quotes1.png)
+
+---
+
+### 💾 Saved Quotes Section
+
+![Saved Quotes](./screenshot/Quotes2.png)
+
+---
+
+## 🧠 Core Concepts Implemented
+
+- useState for state management
+- useEffect for side effects and API calls
+- Derived UI from state
+- Controlled view toggling
 - Conditional rendering
+- Local storage synchronization
+- Component composition (Cards, Buttons)
 
 ---
 
-## 🏗 Project Structure
+## 📦 Installation
 
-```
-src/
- ├── components/
- │    ├── Cards.jsx
- │    └── Buttons.jsx
- │
- ├── App.jsx
- ├── main.jsx
- └── index.css
-```
-
----
-
-## ⚙️ Installation
-
-Clone the repository:
+Clone the repository and run the project:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/smart-quotes-saver.git
-```
-
-Navigate into the project:
-
-```bash
-cd smart-quotes-saver
-```
-
-Install dependencies:
-
-```bash
+git clone https://github.com/your-username/smart-quote-saver.git
+cd smart-quote-saver
 npm install
-```
-
-Start development server:
-
-```bash
 npm run dev
 ```
 
 ---
 
-## 🎯 Planned Improvements
+## 📁 Project Structure
 
-- Save / Unsave quotes
-- Persist saved quotes using localStorage
-- Toggle between All Quotes and Saved Quotes
-- Search functionality
-- Routing (multi-page architecture)
-- Context API integration
-- UI refinement & animations
-
-This project will continue evolving as React concepts advance.
-
----
-
-## 👨‍💻 Author
-
-Pratik Lachwani
+```bash
+src/
+│
+├── components/
+│   ├── Cards.jsx
+│   ├── Buttons.jsx
+│
+├── App.jsx
+├── main.jsx
+├── index.css
+```
 
 ---
 
-## 📄 License
+## 📌 Author
 
-Open-source project for learning and development purposes.
+Pratik Lachwani  
+
+Built as part of continuous React learning and architectural practice.
+
+---
+
+⭐ If you like this project, consider giving it a star.
