@@ -11,8 +11,16 @@ const App = () => {
     const [index, setIndex] = useState(0) ;
     const [limits, setLimits] = useState(8) ;
     const [currentView, setCurrentView] = useState("all") ;
-    const [savedQuotesArr, setSavedQuotesArr] = useState([]) ;
-    
+    const [savedQuotesArr, setSavedQuotesArr] = useState( () => 
+            {
+              const stored = localStorage.getItem("savedQuotes") ;
+              return stored ? JSON.parse(stored) : [] ;
+            }
+         ) ;
+      useEffect(() => 
+      {
+        localStorage.setItem("savedQuotes",JSON.stringify(savedQuotesArr));
+      }, [savedQuotesArr]);
     
     useEffect( () => 
       {
